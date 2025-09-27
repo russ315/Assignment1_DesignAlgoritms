@@ -1,21 +1,49 @@
 import algoritms.metrics.CsvWriter;
 import algoritms.metrics.Metrics;
+import algoritms.sort.MergeSort;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 
 public class Main {
     public static void main(String[] args) {
         Metrics m = new Metrics();
+
+        int listSize = 1000;
+
+        int upperBound = 1000;
+
+        int[] randomNumbers = getRandomArray(listSize, upperBound);
+
         long start = System.nanoTime();
 
+        MergeSort.sort(randomNumbers,m);
 
         long end = System.nanoTime();
+
+        writeToCsv("MergeSort",listSize,end-start,m);
+
+        for(int i = 0; i < listSize; i++){
+            System.out.println(randomNumbers[i]);
+        }
+    }
+    private static void writeToCsv(String algo,int n,long time,Metrics m){
         try (CsvWriter csv = new CsvWriter("results.csv")) {
             csv.writeHeader();
-            csv.writeRow("mergesort", 1, end - start, m);
+            csv.writeRow(algo, n, time, m);
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-
+    }
+    public static int[] getRandomArray(int listSize,int upperBound){
+        int[] randomNumbers = new int[listSize];
+        Random random = new Random();
+        for (int i = 0; i < listSize; i++) {
+            int randomNumber = random.nextInt(upperBound);
+            randomNumbers[i] = randomNumber;
+        }
+        return randomNumbers;
     }
 }
