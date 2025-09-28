@@ -1,0 +1,2 @@
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+mergesort,10000,4,143080,135883,511,9

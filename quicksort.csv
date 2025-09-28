@@ -1,0 +1,12 @@
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,4,171790,52119,0,6
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,4,167104,53265,0,6
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,5,154682,54108,0,6
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,4,157685,53631,0,6
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,4,168115,53533,0,5
+algo,n,time_ns,comparisons,swaps,allocations,maxDepth
+quicksort,10000,5,166226,54294,0,6
