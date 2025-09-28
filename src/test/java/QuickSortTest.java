@@ -1,5 +1,3 @@
-package tests;
-
 import algoritms.metrics.Metrics;
 import algoritms.sort.ISort;
 import algoritms.sort.QuickSort;

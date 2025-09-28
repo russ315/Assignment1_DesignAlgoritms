@@ -35,8 +35,9 @@ public class ClosestPair {
             Point[] leftY = new Point[mid - lo + 1];
             Point[] rightY = new Point[hi - mid];
             int l = 0, r = 0;
+
             for (Point p : ptsByY) {
-                if (p.x() <= midPoint.x()) {
+                if (p.x() < midPoint.x() || (p.x() == midPoint.x() && belongsLeft(p, ptsByX, lo, mid))) {
                     leftY[l++] = p;
                 } else {
                     rightY[r++] = p;
@@ -56,12 +57,21 @@ public class ClosestPair {
                     strip[s++] = p;
                 }
             }
+            Arrays.sort(strip, 0, s, Comparator.comparingDouble(Point::y));
 
             Result stripRes = stripClosest(strip, s, delta, best, m);
 
             return stripRes.dist() < best.dist() ? stripRes : best;
         }
     }
+
+    private static boolean belongsLeft(Point p, Point[] ptsByX, int lo, int mid) {
+        for (int i = lo; i <= mid; i++) {
+            if (ptsByX[i] == p) return true;
+        }
+        return false;
+    }
+
 
     private static Result bruteForce(Point[] pts, int lo, int hi, Metrics m) {
         double minDist = Double.POSITIVE_INFINITY;

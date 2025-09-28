@@ -1,5 +1,3 @@
-package tests;
-
 import algoritms.metrics.Metrics;
 import algoritms.sort.DeterministicSelect;
 import org.junit.jupiter.api.Test;

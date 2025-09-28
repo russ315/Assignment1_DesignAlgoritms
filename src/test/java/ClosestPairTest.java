@@ -1,4 +1,3 @@
-package tests;
 
 import algoritms.geometry.Result;
 import algoritms.metrics.Metrics;

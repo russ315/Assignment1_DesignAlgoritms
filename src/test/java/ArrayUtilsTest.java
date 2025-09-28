@@ -1,5 +1,3 @@
-package tests;
-
 import algoritms.metrics.Metrics;
 import algoritms.util.ArrayUtils;
 import org.junit.jupiter.api.Test;
