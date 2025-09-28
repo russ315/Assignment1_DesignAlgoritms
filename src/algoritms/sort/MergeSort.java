@@ -4,10 +4,10 @@ package algoritms.sort;
 import algoritms.metrics.DepthTracker;
 import algoritms.metrics.Metrics;
 
-public class MergeSort {
+public class MergeSort implements ISort {
     private static final int CUTOFF = 32;
 
-    public static void sort(int[] a, Metrics m) {
+    public void sort(int[] a, Metrics m) {
         int[] buffer = new int[a.length];
         sort(a, buffer, 0, a.length - 1, m);
     }

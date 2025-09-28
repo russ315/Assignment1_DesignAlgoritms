@@ -1,6 +1,8 @@
 import algoritms.metrics.CsvWriter;
 import algoritms.metrics.Metrics;
+import algoritms.sort.ISort;
 import algoritms.sort.MergeSort;
+import algoritms.sort.QuickSort;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,8 +19,8 @@ public class Main {
         int[] randomNumbers = getRandomArray(listSize, upperBound);
 
         long start = System.nanoTime();
-
-        MergeSort.sort(randomNumbers,m);
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(randomNumbers, m);
 
         long end = System.nanoTime();
 

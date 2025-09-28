@@ -7,6 +7,7 @@ import algoritms.util.ArrayUtils;
 
 import java.util.Arrays;
 
+
 public class DeterministicSelect {
     public static int select(int[] a, int k, Metrics m) {
         ArrayUtils.requireNotNull(a);
@@ -69,4 +70,6 @@ public class DeterministicSelect {
 
         return medianOfMedians(a, lo, lo + numMedians - 1, m);
     }
+
+
 }

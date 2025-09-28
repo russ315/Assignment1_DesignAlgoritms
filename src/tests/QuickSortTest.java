@@ -1,6 +1,7 @@
 package tests;
 
 import algoritms.metrics.Metrics;
+import algoritms.sort.ISort;
 import algoritms.sort.QuickSort;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,8 @@ class QuickSortTest {
     void testSmallArray() {
         int[] arr = {5, 3, 1, 4, 2};
         Metrics m = new Metrics();
-        QuickSort.sort(arr, m);
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(arr, m);
         assertArrayEquals(new int[]{1,2,3,4,5}, arr);
         assertTrue(m.getComparisons() > 0);
     }
@@ -25,7 +27,8 @@ class QuickSortTest {
         int[] arr = {1,2,3,4,5,6,7};
         int[] expected = Arrays.copyOf(arr, arr.length);
         Metrics m = new Metrics();
-        QuickSort.sort(arr, m);
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(arr, m);
         assertArrayEquals(expected, arr);
     }
 
@@ -36,7 +39,8 @@ class QuickSortTest {
         Arrays.sort(expected);
 
         Metrics m = new Metrics();
-        QuickSort.sort(arr, m);
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(arr, m);
         assertArrayEquals(expected, arr);
     }
 
@@ -48,8 +52,8 @@ class QuickSortTest {
         Arrays.sort(expected);
 
         Metrics m = new Metrics();
-        QuickSort.sort(arr, m);
-
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(arr, m);
         assertArrayEquals(expected, arr);
         assertTrue(m.getMaxDepth() <= 2 * (int)(Math.log(n) / Math.log(2)) + 10,
                 "Depth should be ~O(log n)");
@@ -59,7 +63,8 @@ class QuickSortTest {
     void testCutoffInsertionSort() {
         int[] arr = {3, 1, 2};
         Metrics m = new Metrics();
-        QuickSort.sort(arr, m);
+        ISort sortAlgoritm = new QuickSort();
+        sortAlgoritm.sort(arr, m);
         assertArrayEquals(new int[]{1,2,3}, arr);
     }
 }

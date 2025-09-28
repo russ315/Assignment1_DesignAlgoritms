@@ -2,7 +2,7 @@ package algoritms.sort;
 
 import algoritms.metrics.Metrics;
 
-public class InsertionSort {
+public class InsertionSort implements ISort {
     public static void sort(int[] a, int lo, int hi, Metrics m) {
         for (int i = lo + 1; i <= hi; i++) {
             int key = a[i];
@@ -16,5 +16,10 @@ public class InsertionSort {
             }
             a[j + 1] = key;
         }
+    }
+
+    @Override
+    public void sort(int[] a, Metrics m) {
+        sort(a, 0, a.length - 1, m);
     }
 }

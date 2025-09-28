@@ -4,10 +4,10 @@ import algoritms.metrics.DepthTracker;
 import algoritms.metrics.Metrics;
 import algoritms.util.ArrayUtils;
 
-public class QuickSort {
+public class QuickSort implements ISort {
     private static final int CUTOFF = 32;
 
-    public static void sort(int[] a, Metrics m) {
+    public void sort(int[] a, Metrics m) {
         ArrayUtils.requireNotNull(a);
         sort(a, 0, a.length - 1, m);
     }
