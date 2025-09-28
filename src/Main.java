@@ -1,6 +1,7 @@
 import algoritms.metrics.CsvWriter;
 import algoritms.metrics.Metrics;
 import algoritms.sort.ISort;
+import algoritms.sort.InsertionSort;
 import algoritms.sort.MergeSort;
 import algoritms.sort.QuickSort;
 
@@ -19,12 +20,12 @@ public class Main {
         int[] randomNumbers = getRandomArray(listSize, upperBound);
 
         long start = System.nanoTime();
-        ISort sortAlgoritm = new QuickSort();
+        ISort sortAlgoritm = new InsertionSort();
         sortAlgoritm.sort(randomNumbers, m);
 
         long end = System.nanoTime();
 
-        writeToCsv("MergeSort",listSize,end-start,m);
+        writeToCsv(sortAlgoritm.getClass().getName().replace("algoritms.sort.",""),listSize,end-start,m);
 
         for(int i = 0; i < listSize; i++){
             System.out.println(randomNumbers[i]);
